@@ -9,7 +9,7 @@ Track Shoes™ is a web app that can manage inventories of products (shoes) in d
 ## Setup
 - Clone/download this project directory
 
-- Open terminal in new directory
+- Open terminal in project directory
 ```
 $ postgres
 $ bundle
