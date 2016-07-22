@@ -1,6 +1,8 @@
-<h1>This <%= store.name %> </h1>
-<ul>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
+<div class="container">
+  <h1>Stores in your distribution network</h1>
+  <ul>
+    <% @store.each() do |store| %>
+      <li><%= store.name() %></li>
+    <% end %>
+  </ul>
+</div>

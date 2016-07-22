@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h1>Shoe brands in <%= @store.name %></h1>
+  <ul>
+    <% @store.shoes.each() do |shoe| %>
+      <li><%= shoe.name() %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="well">
+  <h3>Edit This Store</h3>
+  <form action="/stores/<%= @store.id() %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+  </form>
+  <h3>Delete This Store</h3>
+  <form action="/stores/<%= @store.id() %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+  </form>
+</div>
