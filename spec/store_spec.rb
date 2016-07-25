@@ -10,3 +10,7 @@ describe (Store) do
     end
   end
 end
+
+describe (Store) do
+  it { should have_and_belong_to_many(:shoes) }
+end
