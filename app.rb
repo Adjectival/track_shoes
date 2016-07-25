@@ -20,29 +20,39 @@ post('/shoes/new') do
 end
 
 get('/stores/:id') do
-  @stores = Store.all()
+  @store = Store.find(params.fetch('id').to_i)
+  @shoes = Shoe.all()
   erb(:store)
 end
 
 patch('/stores/:id') do
   @stores = Store.all()
-  erb(:store)
+  redirect to('/')
 end
 
-delete('/stores/:id') do
+delete('/stores/:id/delete') do
+  @store = Store.find(params.fetch('id').to_i)
   @stores = Store.all()
-  erb(:store)
+  @shoes = Shoe.all()
+  @store.destroy()
+  redirect('/')
 end
 
-
-
-
-
-get('/shoes/new') do
-  @shoes = Shoe.all()
-  erb(:new_shoe_form)
+get('/shoes/:id') do
+  @shoe = Shoe.find(params.fetch('id').to_i)
+  @stores = Store.all()
+  erb(:shoe)
 end
-post('/shoes/new') do
+
+patch('/shoes/:id') do
   @shoes = Shoe.all()
-  erb(:new_shoe_form)
+  redirect to('/')
+end
+
+delete('/shoes/:id/delete') do
+  @shoes = Shoe.all()
+  @shoe = Shoe.find(params.fetch('id').to_i)
+  @stores = Store.all()
+  @shoe.destroy()
+  redirect('/')
 end

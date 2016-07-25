@@ -1,0 +1,28 @@
+<div class="row">
+  <h1>Stores that sell brand <%= @shoe.brand %></h1>
+  <hr>
+  <% if @stores.any?() %>
+    <ul>
+      <% @stores.each() do |store| %>
+        <li><a href="stores/<%= store.id() %>"><%= store.name() %></a></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h4>No Stores sell this brand yet</h4>
+  <% end %>
+</div>
+<div class="row">
+  <div class="well">
+    <h3>Edit This Shoe Brand</h3>
+    <form action="/shoes/<%= @shoe.id() %>/edit" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <button type="submit" class="btn btn-lg btn-warning">Edit</button>
+    </form>
+    <h3>Delete This Shoe Brand</h3>
+    <form action="/shoes/<%= @shoe.id() %>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+    </form>
+  </div>
+
+</div>
