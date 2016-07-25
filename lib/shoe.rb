@@ -6,6 +6,6 @@ class Shoe < ActiveRecord::Base
   before_save(:upcase_name)
    private
     define_method(:upcase_name) do
-      self.brand=(brand().upcase())
+      self.brand = (brand.upcase())
     end
 end

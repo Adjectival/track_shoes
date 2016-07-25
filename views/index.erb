@@ -1,6 +1,42 @@
 <h1>Track Shoes™ || <i class="em em-shoe"></i> + <i class="em em-boot"></i> + <i class="em em-sandal"></i></h1>
-<img src="img/main.jpg" alt="distribution center #1 front image">
-<ul>
-  <li><a class="btn btn-lg btn-success" href="/stores">Manage Stores</a></li>
-  <li><a class="btn btn-med btn-primary" href="/shoes">Add Shoes to Inventory</a></li>
-</ul>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <img src="img/main.jpg" alt="distribution center #1 front image" width="70%" height="70%">
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+
+    <ul>
+      <li><a class="btn btn-lg btn-success" href="/stores">Manage Stores</a></li>
+      <li><a class="btn btn-med btn-primary" href="/shoes">Add Shoes to Inventory</a></li>
+    </ul>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h2 class="text-success">Stores</h2>
+    <hr>
+    <% if @stores.any?() %>
+    <ul>
+      <% @stores.each() do |store| %>
+      <li><a href="stores/<%= store.id() %>"><%= store.name() %></a></li>
+      <% end %>
+    </ul>
+    <% else %>
+      <h4>No Stores</h4>
+    <% end %>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h2 class="text-primary">Shoes</h2>
+    <hr>
+    <% if @shoes.any?() %>
+    <ul>
+      <% @shoes.each() do |shoe| %>
+      <li><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a></li>
+      <% end %>
+    </ul>
+    <% else %>
+      <h4>No Shoe brands</h4>
+    <% end %>
+  </div>
+</div>

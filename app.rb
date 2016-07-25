@@ -4,12 +4,9 @@ Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
-  erb(:index)
-end
-
-get('/stores') do
   @stores = Store.all()
-  erb(:stores)
+  @shoes = Shoe.all()
+  erb(:index)
 end
 
 post('/stores/new') do
@@ -37,16 +34,11 @@ delete('/store/:id') do
   erb(:store)
 end
 
-get('/shoes') do
-  @shoes = Shoes.all()
-  erb(:shoes)
-end
-
 get('/shoes/new') do
-  @shoes = Shoes.all()
+  @shoes = Shoe.all()
   erb(:new_shoe_form)
 end
 post('/shoes/new') do
-  @shoes = Shoes.all()
+  @shoes = Shoe.all()
   redirect(:shoes)
 end

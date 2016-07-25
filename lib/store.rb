@@ -6,7 +6,7 @@ class Store < ActiveRecord::Base
   before_save(:upcase_name)
    private
     define_method(:upcase_name) do
-      self.name=(name().upcase())
+      self.name = (name.upcase())
     end
 
 end
