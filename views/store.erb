@@ -16,6 +16,8 @@
     <h3>Edit This Store</h3>
     <form action="/stores/<%= @store.id() %>/edit" method="post">
       <input type="hidden" name="_method" value="patch">
+      <label for="name">Store Name</label><br>
+      <input name="name" type="text" value="store name">
       <button type="submit" class="btn btn-lg btn-warning">Edit</button>
     </form>
     <h3>Delete This Store</h3>

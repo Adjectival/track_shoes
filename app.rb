@@ -25,11 +25,6 @@ get('/stores/:id') do
   erb(:store)
 end
 
-patch('/stores/:id') do
-  @stores = Store.all()
-  redirect to('/')
-end
-
 delete('/stores/:id/delete') do
   @store = Store.find(params.fetch('id').to_i)
   @stores = Store.all()
@@ -38,15 +33,18 @@ delete('/stores/:id/delete') do
   redirect('/')
 end
 
+patch('/stores/:id/edit') do
+  @stores = Store.all()
+  @store = Store.find(params.fetch('id').to_i)
+  name = params.fetch("name")
+  @store.update({:name => name})
+  redirect to('/')
+end
+
 get('/shoes/:id') do
   @shoe = Shoe.find(params.fetch('id').to_i)
   @stores = Store.all()
   erb(:shoe)
-end
-
-patch('/shoes/:id') do
-  @shoes = Shoe.all()
-  redirect to('/')
 end
 
 delete('/shoes/:id/delete') do
@@ -55,4 +53,12 @@ delete('/shoes/:id/delete') do
   @stores = Store.all()
   @shoe.destroy()
   redirect('/')
+end
+
+patch('/shoes/:id/edit') do
+  @shoes = Shoe.all()
+  @shoe = Shoe.find(params.fetch('id').to_i)
+  brand = params.fetch("brand")
+  @shoe.update({:brand => brand})
+  redirect to('/')
 end

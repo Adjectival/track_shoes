@@ -16,6 +16,8 @@
     <h3>Edit This Shoe Brand</h3>
     <form action="/shoes/<%= @shoe.id() %>/edit" method="post">
       <input type="hidden" name="_method" value="patch">
+      <label for="brand">Shoe Brand</label><br>
+      <input name="brand" type="text" value="shoe brand">
       <button type="submit" class="btn btn-lg btn-warning">Edit</button>
     </form>
     <h3>Delete This Shoe Brand</h3>
