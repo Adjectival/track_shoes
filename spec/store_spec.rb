@@ -6,7 +6,8 @@ describe (Store) do
       test_store = Store.create({:name => 'All Boots'})
       test_shoe1 = Shoe.create({:brand => 'Muvo'})
       test_shoe2 = Shoe.create({:brand => 'Jumps'})
-      expect(test_store.shoes()).to(eq([test_shoe1], [test_shoe2]))
+      test_store.update({:shoes => [test_shoe1, test_shoe2]})
+      expect(test_store.shoes()).to(eq([test_shoe1, test_shoe2]))
     end
   end
 end
