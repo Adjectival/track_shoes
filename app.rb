@@ -43,13 +43,11 @@ patch('/stores/:id/edit') do
 end
 
 post('/stores/:id/add_shoes') do
-  store_id = params.fetch('id').to_i()
+  @store = Store.find(params['id'].to_i)
   shoe_ids = params.fetch('shoe_ids')
-  shoe_ids.each() do
-    shoe = Shoe.find('shoe_id'.to_i)
-    if !@store.shoes.includes? (shoe)
-      @store.shoes << shoe
-    end
+  shoe = Shoe.find(shoe_ids)
+  shoe.each do |shoe|
+    @store.shoes << shoe
   end
   redirect to('/')
 end
