@@ -3,10 +3,10 @@ class Store < ActiveRecord::Base
 
   validates(:name, {:presence => true, :length => {:maximum => 120}})
 
-  before_save(:titlecase_name)
+  before_save(:upcase_name)
    private
-    define_method(:titlecase_name) do
-      self.name = (name.titlecase())
+    define_method(:upcase_name) do
+      self.name = (name.upcase())
     end
 
 end
