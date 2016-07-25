@@ -1,4 +1,5 @@
 require("bundler/setup")
+require("pry")
 Bundler.require(:default)
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
@@ -42,15 +43,16 @@ patch('/stores/:id/edit') do
 end
 
 patch('/stores/:id/add_shoes') do
+  store_id = params.fetch('id').to_i()
+  this_store = Store.find(store_id)
   shoes = []
   shoe_ids = params.fetch('shoe_ids')
-  store_id = params.fetch('id').to_i()
   shoe_ids.each() do |shoe_id|
     shoes << shoe_id
   end
-  this_store = Store.find(store_id)
+  store_shoes = this_store.shoes()
   shoes.each() do |shoe|
-    this_store.shoes.update(shoe)
+    store_shoes.update(:brand => shoe)
   end
   redirect to('/')
 end

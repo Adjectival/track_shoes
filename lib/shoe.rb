@@ -3,9 +3,9 @@ class Shoe < ActiveRecord::Base
 
   validates(:brand, {:presence => true, :length => {:maximum => 60}})
 
-  before_save(:upcase_name)
+  before_save(:upcase_brand)
    private
-    define_method(:upcase_name) do
+    define_method(:upcase_brand) do
       self.brand = (brand.upcase())
     end
 end
