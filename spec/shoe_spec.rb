@@ -11,13 +11,8 @@ describe (Shoe) do
     end
   end
 
-  describe ('#upcase_brand') do
-    it "capitalizes the first letter of the shoe brand automatically" do
-      test_brand = Store.create({name: 'gems'})
-      expect(test_brand.name).to eq('Gems')
-    end
+  describe (Shoe) do
+    it { should have_and_belong_to_many(:stores) }
   end
 
-describe (Shoe) do
-  it { should have_and_belong_to_many(:stores) }
 end

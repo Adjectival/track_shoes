@@ -10,14 +10,8 @@ describe (Store) do
       expect(test_store.shoes()).to(eq([test_shoe1, test_shoe2]))
     end
   end
-
-  describe ('#upcase_name') do
-    it "capitalizes the first letter of the store name automatically" do
-      test_store = Store.create({name: 'darkshoes'})
-      expect(test_store.name).to eq('Darkshoes')
-    end
+  describe (Store) do
+    it { should have_and_belong_to_many(:shoes) }
   end
-  
-describe (Store) do
-  it { should have_and_belong_to_many(:shoes) }
+
 end

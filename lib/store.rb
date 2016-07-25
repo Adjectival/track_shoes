@@ -8,5 +8,4 @@ class Store < ActiveRecord::Base
     define_method(:upcase_name) do
       self.name = (name.upcase())
     end
-
 end
