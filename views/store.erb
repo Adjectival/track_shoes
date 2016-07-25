@@ -38,7 +38,7 @@
         <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a>
         </div>
       <% end %>
-        <input type="hidden" name="_method" value="patch"><br>
+        <input type="hidden" name="_method" value="post"><br>
         <button type="submit" class="btn btn-lg btn-success">Add Shoes</button>
     </form>
   <% else %>
