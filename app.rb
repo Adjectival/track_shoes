@@ -10,29 +10,33 @@ get('/') do
 end
 
 post('/stores/new') do
-  @stores = Store.all()
-  erb(:new_store_form)
+  Store.create({:name => params['new_store']})
+  redirect('/')
 end
 
-get('/new_store_form') do
-  @stores = Store.all()
-  redirect(:stores)
+post('/shoes/new') do
+  Shoe.create({:brand => params['new_shoe']})
+  redirect('/')
 end
 
-get('/store/:id') do
+get('/stores/:id') do
   @stores = Store.all()
   erb(:store)
 end
 
-patch('/store/:id') do
+patch('/stores/:id') do
   @stores = Store.all()
   erb(:store)
 end
 
-delete('/store/:id') do
+delete('/stores/:id') do
   @stores = Store.all()
   erb(:store)
 end
+
+
+
+
 
 get('/shoes/new') do
   @shoes = Shoe.all()
@@ -40,5 +44,5 @@ get('/shoes/new') do
 end
 post('/shoes/new') do
   @shoes = Shoe.all()
-  redirect(:shoes)
+  erb(:new_shoe_form)
 end
