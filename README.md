@@ -4,7 +4,7 @@
 _an Epicodus Project, July 2016_
 
 ### Description
-Track Shoes™ is a web app that can manage inventories of products (shoes) in distribution centers (stores). This business scenario requires a many-to-many database schema.
+Track Shoes is a web app that can manage inventories of products (shoes) in distribution centers (stores). This business scenario requires a many-to-many database schema.
 
 ## Setup
 - Clone/download this project directory
@@ -44,7 +44,7 @@ Check out some of these resources to understand the technologies:_
 - _getbootstrap.com_
 
 ### Legal
-_This software is available under the MIT license and can be modified and used for any purposes without express permission of the author, even though the " ™ " symbol is used in the page title-- it highlights the pun and ought to be interpreted ironically or with some similar substitute for humor._
+_This software is available under the MIT license and can be modified and used for any purposes without express permission of the author._
 
 
 Copyright (c) 2016 **AJ**

@@ -48,8 +48,8 @@ patch('/stores/:id') do
 end
 
 post('/stores/:id/add_shoes') do
-  @store = Store.find(params['id'].to_i)
-  shoe_ids = params.fetch('shoe_ids')
+  @store = Store.find(params.fetch('id').to_i)
+  shoe_ids = params.fetch['shoe_ids']
   shoe_ids.each() do |shoe_id|
     shoe = Shoe.find(shoe_id)
     @store.shoes << shoe
