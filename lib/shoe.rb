@@ -5,6 +5,6 @@ class Shoe < ActiveRecord::Base
 
    private
     define_method(:capitalize_brand) do
-      self.brand = (brand.downcase.titleize())
+      self.brand = (brand.downcase.titlecase())
     end
 end

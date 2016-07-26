@@ -16,6 +16,11 @@ describe (Shoe) do
       expect(test_shoe.save()).to(eq(false))
     end
 
+    it('capitalizes brand') do
+      test_shoe = Shoe.create({:brand => 'stabby lambdas'})
+      expect(test_shoe.brand).to(eq('Stabby Lambdas'))
+    end
+
   describe (Shoe) do
     it { should have_and_belong_to_many(:stores) }
   end
