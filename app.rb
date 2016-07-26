@@ -44,24 +44,14 @@ patch('/stores/:id') do
   store = Store.find(params.fetch('id').to_i)
   name = params.fetch("name")
   store.update({:name => name})
-
-  if params[:shoe_ids]
-    shoe_ids = []
-    params[:shoe_ids].each() do |shoe_id|
-      shoe_ids << shoe_id.to_i()
-    end
-    shoe_ids.each() do |shoe_id|
-      Shoe.find(shoe_id).stores << store
-    end
-  end
-  redirect to('/stores/#{store.id}')
+  redirect to('/')
 end
 
 post('/stores/:id/add_shoes') do
   @store = Store.find(params['id'].to_i)
   shoe_ids = params.fetch('shoe_ids')
-  shoe = Shoe.find(shoe_ids)
-  shoe.each do |shoe|
+  shoe_ids.each() do |shoe_id|
+    shoe = Shoe.find(shoe_id)
     @store.shoes << shoe
   end
   redirect to('/')
@@ -97,5 +87,5 @@ patch('/shoes/:id') do
   brand = params.fetch("brand")
   @shoe = Shoe.find(params.fetch('id').to_i)
   @shoe.update({:brand => brand})
-  redirect to('/shoes/#{@shoe.id}')
+  redirect to('/')
 end
