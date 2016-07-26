@@ -11,15 +11,6 @@ end
 
 post('/stores') do
   Store.create({:name => params['new_store']})
-  if params[:shoe_ids]
-    shoe_ids = []
-    params[:shoe_ids].each() do |shoe_id|
-      shoe_ids << shoe_id.to_i()
-    end
-    shoe_ids.each() do |shoe_id|
-      Shoe.find(shoe_id).stores << store
-    end
-  end
   redirect('/')
 end
 
@@ -47,12 +38,15 @@ patch('/stores/:id') do
   redirect to('/')
 end
 
-post('/stores/:id/add_shoes') do
+patch('/stores/:id/add_shoes') do
   @store = Store.find(params.fetch('id').to_i)
-  shoe_ids = params.fetch['shoe_ids']
+  shoe_ids = []
+  shoe_ids = params['shoe_ids']
   shoe_ids.each() do |shoe_id|
     shoe = Shoe.find(shoe_id)
-    @store.shoes << shoe
+    if !@store.shoes.include? (shoe)
+      @store.shoes << shoe
+    end
   end
   redirect to('/')
 end
