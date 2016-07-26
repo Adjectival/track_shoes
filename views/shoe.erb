@@ -13,7 +13,19 @@
       <button type="submit" class="btn btn-lg btn-danger">Delete</button>
     </form>
   </div>
-
+</div>
+<div class="row">
+  <h1><%= @shoe.brand %> is sold in these stores</h1>
+  <hr>
+  <% if @shoe.stores.any?() %>
+    <ul>
+      <% @shoe.stores.each() do |store| %>
+        <li><h3><%= store.name() %></h3></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h4>No Stores sell this Shoe yet</h4>
+  <% end %>
 </div>
 <div>
   <a class="btn btn-lg btn-info" href="/">Back to Main</a>
