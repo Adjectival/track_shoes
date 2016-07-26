@@ -21,7 +21,7 @@
   <% if @store.shoes.any?() %>
     <ul>
       <% @store.shoes.each() do |shoe| %>
-        <li><h3><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a></h3></li>
+        <li><h3><%= shoe.brand() %></h3></li>
       <% end %>
     </ul>
   <% else %>
@@ -34,7 +34,7 @@
     <form action="/stores/<%= @store.id() %>/add_shoes" method="post">
       <% @shoes.each() do |shoe| %>
         <div class="checkbox">
-        <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><a href="shoes/<%= shoe.id() %>"><h4><%= shoe.brand() %></h4></a>
+        <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><h4><%= shoe.brand() %></h4>
         </div>
       <% end %>
         <input type="hidden" name="_method" value="post"><br>

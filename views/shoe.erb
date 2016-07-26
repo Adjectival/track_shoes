@@ -4,7 +4,7 @@
   <% if @stores.any?() %>
     <ul>
       <% @stores.each() do |store| %>
-        <li><h3><a href="stores/<%= store.id() %>"><%= store.name() %></a></h3></li>
+        <li><h3><%= store.name() %></h3></li>
       <% end %>
     </ul>
   <% else %>

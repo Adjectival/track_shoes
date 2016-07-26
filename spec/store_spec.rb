@@ -10,6 +10,12 @@ describe (Store) do
       expect(test_store.shoes()).to(eq([test_shoe1, test_shoe2]))
     end
   end
+
+    it('validates the name input') do
+      test_store = Store.new({:name => ''})
+      expect(test_store.save()).to(eq(false))
+    end
+
   describe (Store) do
     it { should have_and_belong_to_many(:shoes) }
   end
