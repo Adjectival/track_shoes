@@ -4,7 +4,7 @@
   <% if @stores.any?() %>
     <ul>
       <% @stores.each() do |store| %>
-        <li><a href="stores/<%= store.id() %>"><%= store.name() %></a></li>
+        <li><h3><a href="stores/<%= store.id() %>"><%= store.name() %></a></h3></li>
       <% end %>
     </ul>
   <% else %>
@@ -14,14 +14,13 @@
 <div class="row">
   <div class="well">
     <h3>Edit This Shoe Brand</h3>
-    <form action="/shoes/<%= @shoe.id() %>/edit" method="post">
+    <form action="/shoes/<%= @shoe.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">
-      <label for="brand">Shoe Brand</label><br>
-      <input name="brand" type="text" value="shoe brand">
+      <input name="brand" type="text" value="brand">
       <button type="submit" class="btn btn-lg btn-warning">Edit</button>
     </form>
     <h3>Delete This Shoe Brand</h3>
-    <form action="/shoes/<%= @shoe.id() %>/delete" method="post">
+    <form action="/shoes/<%= @shoe.id() %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <button type="submit" class="btn btn-lg btn-danger">Delete</button>
     </form>

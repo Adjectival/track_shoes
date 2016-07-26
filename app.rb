@@ -1,7 +1,6 @@
 require("bundler/setup")
 require("pry")
 Bundler.require(:default)
-
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
@@ -10,12 +9,21 @@ get('/') do
   erb(:index)
 end
 
-post('/stores/new') do
+post('/stores') do
   Store.create({:name => params['new_store']})
+  if params[:shoe_ids]
+    shoe_ids = []
+    params[:shoe_ids].each() do |shoe_id|
+      shoe_ids << shoe_id.to_i()
+    end
+    shoe_ids.each() do |shoe_id|
+      Shoe.find(shoe_id).stores << store
+    end
+  end
   redirect('/')
 end
 
-post('/shoes/new') do
+post('/shoes') do
   Shoe.create({:brand => params['new_shoe']})
   redirect('/')
 end
@@ -26,20 +34,27 @@ get('/stores/:id') do
   erb(:store)
 end
 
-delete('/stores/:id/delete') do
-  @store = Store.find(params.fetch('id').to_i)
-  @stores = Store.all()
-  @shoes = Shoe.all()
-  @store.destroy()
+delete('/stores/:id') do
+  store = Store.find(params.fetch('id').to_i)
+  store.destroy()
   redirect('/')
 end
 
-patch('/stores/:id/edit') do
-  @stores = Store.all()
-  @store = Store.find(params.fetch('id').to_i)
+patch('/stores/:id') do
+  store = Store.find(params.fetch('id').to_i)
   name = params.fetch("name")
-  @store.update({:name => name})
-  redirect to('/')
+  store.update({:name => name})
+
+  if params[:shoe_ids]
+    shoe_ids = []
+    params[:shoe_ids].each() do |shoe_id|
+      shoe_ids << shoe_id.to_i()
+    end
+    shoe_ids.each() do |shoe_id|
+      Shoe.find(shoe_id).stores << store
+    end
+  end
+  redirect to('/stores/#{store.id}')
 end
 
 post('/stores/:id/add_shoes') do
@@ -58,18 +73,29 @@ get('/shoes/:id') do
   erb(:shoe)
 end
 
-delete('/shoes/:id/delete') do
-  @shoes = Shoe.all()
+get('/stores/shoes/:id') do
   @shoe = Shoe.find(params.fetch('id').to_i)
   @stores = Store.all()
-  @shoe.destroy()
+  erb(:shoe)
+end
+
+get('/shoes/stores/:id') do
+  @shoe = Shoe.find(params.fetch('id').to_i)
+  @store = Store.find(params.fetch('id').to_i)
+  @shoes = Shoe.all()
+  @stores = Store.all()
+  erb(:shoe)
+end
+
+delete('/shoes/:id') do
+  shoe = Shoe.find(params.fetch('id').to_i)
+  shoe.destroy()
   redirect('/')
 end
 
-patch('/shoes/:id/edit') do
-  @shoes = Shoe.all()
-  @shoe = Shoe.find(params.fetch('id').to_i)
+patch('/shoes/:id') do
   brand = params.fetch("brand")
+  @shoe = Shoe.find(params.fetch('id').to_i)
   @shoe.update({:brand => brand})
-  redirect to('/')
+  redirect to('/shoes/#{@shoe.id}')
 end

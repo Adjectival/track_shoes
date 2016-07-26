@@ -21,9 +21,8 @@
       <% else %>
         <h4>No Stores!</h4>
       <% end %>
-      <form action="/stores/new" method="post">
+      <form action="/stores" method="post">
         <input name="new_store" type="text" value="New Store Name" class="form-control">
-        <label for="new_store">Enter Store Name</label>
         <button type="submit" class="btn btn-lg btn-success">Add New Store</button>
       </form>
   </div>
@@ -39,9 +38,8 @@
       <% else %>
       <h4>No Shoe brands!</h4>
     <% end %>
-    <form action="/shoes/new" method="post">
+    <form action="/shoes" method="post">
       <input name="new_shoe" type="text" value="New Shoe Brand" class="form-control">
-      <label for="new_shoe">Enter Shoe Brand</label>
       <button type="submit" class="btn btn-lg btn-primary">Add New Shoe</button>
     </form>
   </div>

@@ -1,11 +1,10 @@
 class Store < ActiveRecord::Base
   has_and_belongs_to_many(:shoes)
-
+  before_save(:capitalize_name)
   validates(:name, {:presence => true, :length => {:maximum => 120}})
 
-  before_save(:upcase_name)
    private
-    define_method(:upcase_name) do
-      self.name = (name.upcase())
+    define_method(:capitalize_name) do
+      self.name = (name.downcase.titleize())
     end
 end

@@ -1,16 +1,15 @@
 <div class="row well">
   <div class="col-md-6 col-sm-6 col-xs-12">
     <h3>Edit This Store</h3>
-    <form action="/stores/<%= @store.id() %>/edit" method="post">
+    <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">
-      <label for="name">Store Name</label><br>
       <input name="name" type="text" value="store name">
       <button type="submit" class="btn btn-lg btn-warning">Edit</button>
     </form>
   </div>
   <div class="col-md-6 col-sm-6 col-xs-12">
     <h3>Delete This Store</h3>
-    <form action="/stores/<%= @store.id() %>/delete" method="post">
+    <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <button type="submit" class="btn btn-lg btn-danger">Delete</button>
     </form>
@@ -22,7 +21,7 @@
   <% if @store.shoes.any?() %>
     <ul>
       <% @store.shoes.each() do |shoe| %>
-        <li><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a></li>
+        <li><h3><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a></h3></li>
       <% end %>
     </ul>
   <% else %>
@@ -35,7 +34,7 @@
     <form action="/stores/<%= @store.id() %>/add_shoes" method="post">
       <% @shoes.each() do |shoe| %>
         <div class="checkbox">
-        <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a>
+        <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><a href="shoes/<%= shoe.id() %>"><h4><%= shoe.brand() %></h4></a>
         </div>
       <% end %>
         <input type="hidden" name="_method" value="post"><br>
