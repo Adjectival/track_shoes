@@ -33,7 +33,7 @@ end
 
 patch('/stores/:id') do
   store = Store.find(params.fetch('id').to_i)
-  name = params.fetch("name")
+  name = params.fetch("store_name")
   store.update({:name => name})
   redirect to('/')
 end
@@ -78,7 +78,7 @@ delete('/shoes/:id') do
 end
 
 patch('/shoes/:id') do
-  brand = params.fetch("brand")
+  brand = params.fetch("shoe_brand")
   @shoe = Shoe.find(params.fetch('id').to_i)
   @shoe.update({:brand => brand})
   redirect to('/')

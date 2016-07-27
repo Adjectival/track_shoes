@@ -22,7 +22,7 @@ describe('update a store', {:type => :feature}) do
     click_link('Getamax')
     fill_in("store_name", :with => 'shoe stack')
     click_button('Edit')
-    expect(page).to have_content('Shoe stack')
+    expect(page).to have_content('Shoe Stack')
   end
 end
 

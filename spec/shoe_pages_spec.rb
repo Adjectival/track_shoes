@@ -26,7 +26,7 @@ describe('update a shoe', {:type => :feature}) do
     click_button('Add New Shoe')
     expect(page).to have_content('Gems')
     click_link('Gems')
-    fill_in("shoe_name", :with => 'spades')
+    fill_in("shoe_brand", :with => 'spades')
     click_button('Edit')
     expect(page).to have_content('Spades')
   end
