@@ -19,6 +19,19 @@ describe('adding a new shoe', {:type => :feature}) do
   end
 end
 
+describe('update a shoe', {:type => :feature}) do
+  it 'allows user to update a shoe' do
+    visit('/')
+    fill_in("new_shoe", :with => 'gems')
+    click_button('Add New Shoe')
+    expect(page).to have_content('Gems')
+    click_link('Gems')
+    fill_in("shoe_name", :with => 'spades')
+    click_button('Edit')
+    expect(page).to have_content('Spades')
+  end
+end
+
 describe('delete a shoe', {:type => :feature}) do
   it('allows user to delete a shoe') do
     visit('/')
