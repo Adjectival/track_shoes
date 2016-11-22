@@ -1,13 +1,9 @@
-<div class="">
+<div >
   <h1>Track Shoes <i class="em em-boot"></i> ~ <i class="em em-shoe"></i> ~ <i class="em em-sandal"></i></h1>
-
-  <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
-    <img src="img/main.jpg" alt="distribution center #1 front image" width="70%" height="70%">
-  <!-- </div> -->
+    <img class="nice-image" src="img/shoes_enough.png" alt="distribution center #1 front image" width="70%" height="70%">
 </div>
 
 <div class="">
-  <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
     <h2 class="text-success">Stores</h2>
       <hr>
       <% if @stores.any?() %>
@@ -24,7 +20,6 @@
         <button type="submit" class="btn btn-lg btn-success">Add New Store</button>
       </form>
   </div>
-  <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
     <h2 class="text-primary">Shoes</h2>
       <hr>
       <% if @shoes.any?() %>
@@ -40,5 +35,4 @@
       <input name="new_shoe" type="text" value="New Shoe Brand" class="form-control">
       <button type="submit" class="btn btn-lg btn-primary">Add New Shoe</button>
     </form>
-  <!-- </div> -->
 </div>

@@ -10,6 +10,8 @@
 body {
   background-color: skyblue;
   font-family: cursive, sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 h1, h2, h3 {
   text-decoration: none;
@@ -50,6 +52,12 @@ body div {
   top: 0px;
   z-index: 0;
 }
+/*speical styling*/
+.nice-image {
+  border-radius: 25px;
+  margin: 20px;
+
+}
 /*gradients & special coloring*/
 .top-gradient {
   background: cornsilk; /* For browsers that do not support gradients */
@@ -59,7 +67,7 @@ body div {
     background: linear-gradient(DarkOrange, orange, khaki, white); /* Standard syntax */
 }
 .bottom-gradient {
-  background: white; /* For browsers that do not support gradients */
+  background: cornsilk; /* For browsers that do not support gradients */
     background: -webkit-linear-gradientcornsilk, (cornsilk, khaki, GreenYellow, SeaGreen); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Firefox 3.6 to 15 */
