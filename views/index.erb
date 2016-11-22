@@ -1,4 +1,4 @@
-<div >
+<div>
   <h1>Track Shoes <i class="em em-boot"></i> ~ <i class="em em-shoe"></i> ~ <i class="em em-sandal"></i></h1>
     <img class="nice-image" src="img/shoes_enough.png" alt="distribution center #1 front image" width="70%" height="70%">
 </div>
@@ -7,7 +7,7 @@
     <h2 class="text-success">Stores</h2>
       <hr>
       <% if @stores.any?() %>
-        <ul class="top-gradient">
+        <ul class="orange-top-gradient">
           <% @stores.each() do |store| %>
             <li><a href="stores/<%= store.id() %>"><%= store.name() %></a></li>
           <% end %>
@@ -17,13 +17,13 @@
       <% end %>
       <form action="/stores" method="post">
         <input name="new_store" type="text" value="New Store Name" class="form-control">
-        <button type="submit" class="btn btn-lg btn-success">Add New Store</button>
+        <button type="submit">Add New Store</button>
       </form>
   </div>
     <h2 class="text-primary">Shoes</h2>
       <hr>
       <% if @shoes.any?() %>
-        <ul class="bottom-gradient">
+        <ul class="green-bottom-gradient">
           <% @shoes.each() do |shoe| %>
           <li><a href="shoes/<%= shoe.id() %>"><%= shoe.brand() %></a></li>
           <% end %>
@@ -33,6 +33,6 @@
     <% end %>
     <form action="/shoes" method="post">
       <input name="new_shoe" type="text" value="New Shoe Brand" class="form-control">
-      <button type="submit" class="btn btn-lg btn-primary">Add New Shoe</button>
+      <button type="submit">Add New Shoe</button>
     </form>
 </div>

@@ -13,12 +13,20 @@ body {
   font-weight: bold;
   font-size: 1.2em;
 }
-h1, h2, h3 {
+h1 {
   text-decoration: none;
   text-shadow: 2px 2px 4px teal,
   -2px -2px 4px teal,
   -2px 2px 4px blue,
   2px -2px 4px blue;
+}
+h2 {
+  text-decoration: none;
+  text-shadow: 2px 2px 3px orchid,
+  -2px -2px 3px orchid,
+  -2px 2px 3px pink,
+  2px -2px 3px pink;
+  margin: 12px;
 }
 a {
   text-decoration: none;
@@ -28,6 +36,23 @@ a:hover {
   -2px -2px 4px orange,
   -2px 2px 4px gold,
   2px -2px 4px gold;
+}
+button {
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: skyblue;
+  color: navy;
+  font-size: 1em;
+  font-family: serif;
+  border: 2px navy groove;
+}
+input {
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+  font-family: serif;
+  font-size: 1.1em;
 }
 ul {
   list-style: none;
@@ -59,16 +84,30 @@ body div {
 
 }
 /*gradients & special coloring*/
-.top-gradient {
+.orange-top-gradient {
   background: cornsilk; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(DarkOrange, orange, khaki, white); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(DarkOrange, orange, khaki, white); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(DarkOrange, orange, khaki, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(DarkOrange, orange, khaki, white); /* Standard syntax */
 }
-.bottom-gradient {
+.orange-bottom-gradient {
   background: cornsilk; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradientcornsilk, (cornsilk, khaki, GreenYellow, SeaGreen); /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(white, khaki, orange, DarkOrange); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, khaki, orange, DarkOrange); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, khaki, orange, DarkOrange); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, khaki, orange, DarkOrange); /* Standard syntax */
+}
+.green-top-gradient {
+  background: cornsilk; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* Standard syntax */
+}
+.green-bottom-gradient {
+  background: cornsilk; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Firefox 3.6 to 15 */
     background: linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* Standard syntax */
