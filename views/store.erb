@@ -1,21 +1,21 @@
-<div class="row well">
-  <div class="col-md-6 col-sm-6 col-xs-12">
+<div class="top-gradient">
+  <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
     <h3>Edit This Store</h3>
     <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">
       <input name="store_name" type="text">
       <button type="submit" class="btn btn-lg btn-warning">Edit</button>
     </form>
-  </div>
-  <div class="col-md-6 col-sm-6 col-xs-12">
+  <!-- </div> -->
+  <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
     <h3>Delete This Store</h3>
     <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <button type="submit" class="btn btn-lg btn-danger">Delete</button>
     </form>
-  </div>
+  <!-- </div> -->
 </div>
-<div class="row">
+<div>
   <h1>Shoe brands in <%= @store.name %></h1>
   <hr>
   <% if @store.shoes.any?() %>
@@ -28,7 +28,7 @@
     <h4>No Shoe brands in this store</h4>
   <% end %>
 </div>
-<div class="row well">
+<div class="bottom-gradient">
   <h3>Available Shoe brands</h3>
   <% if @shoes.any?() %>
     <form action="/stores/<%= @store.id() %>/add_shoes" method="post">
