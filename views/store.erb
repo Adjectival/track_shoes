@@ -1,4 +1,4 @@
-<div class="orange-top-gradient">
+<div class="warm-top-gradient">
   <h1><%= @store.name %></h1>
   <h2>stocks these Shoes</h2>
   <hr>
@@ -28,7 +28,7 @@
     <h4>No Shoe brands, <a href="/">please add some</a></h4>
   <% end %>
 </div>
-<div class="orange-bottom-gradient">
+<div class="warm-bottom-gradient">
     <h3>Change this Store's Name?</h3>
     <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">

@@ -8,7 +8,7 @@
   padding: 0;
 }
 body {
-  background-color: skyblue;
+  background-color: #B9A8B1;
   font-family: cursive, sans-serif;
   font-weight: bold;
   font-size: 1.2em;
@@ -38,14 +38,20 @@ a:hover {
   2px -2px 4px gold;
 }
 button {
+  font-size: 1em;
+  font-family: serif;
   padding: 8px;
   margin: 10px;
   border-radius: 8px;
-  background-color: skyblue;
-  color: navy;
-  font-size: 1em;
-  font-family: serif;
-  border: 2px navy groove;
+  background-color: #988A60;
+  color: #1B253B;
+  border: 8px #1B253B ridge;
+
+}
+button:hover {
+  background-color: #988A60;
+  color: red;
+  border: 8px #356321 ridge;
 }
 input {
   padding: 8px;
@@ -62,7 +68,7 @@ li {
 }
 /*specific page zones*/
 body div div {
-  background-color: #975;
+  background-color: #B9A8B1;
   color: SeaGreen, green;
   height: 25%;
   width: 100%;
@@ -70,45 +76,68 @@ body div div {
   z-index: 0;
 }
 body div {
-  background-color: #975;
+  background-color: #B9A8B1;
   color: SeaGreen, green;
   height: 25%;
   width: 100%;
   top: 0px;
   z-index: 0;
 }
-/*speical styling*/
-.nice-image {
+/*special styling*/
+.rubbersole-image {
   border-radius: 25px;
   margin: 20px;
-
+  min-width: 400px;
+  min-height: 300px;
+}
+/*centering classes*/
+.center-within-me {
+  position: relative;
+}
+.center-and-valign-me-plz {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-chunk-me-plz {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.center-fixed-in-viewport {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 /*gradients & special coloring*/
-.orange-top-gradient {
+.warm-top-gradient {
   background: cornsilk; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(DarkOrange, orange, khaki, white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(DarkOrange, orange, khaki, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(DarkOrange, orange, khaki, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(DarkOrange, orange, khaki, white); /* Standard syntax */
+    background: -webkit-linear-gradient(#591115, #BD3A42, #CC890F, #F5D440, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#591115, #BD3A42, #CC890F, #F5D440, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#591115, #BD3A42, #CC890F, #F5D440, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#591115, #BD3A42, #CC890F, #F5D440, white); /* Standard syntax */
 }
-.orange-bottom-gradient {
+.warm-bottom-gradient {
   background: cornsilk; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white, khaki, orange, DarkOrange); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white, khaki, orange, DarkOrange); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white, khaki, orange, DarkOrange); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, khaki, orange, DarkOrange); /* Standard syntax */
+    background: -webkit-linear-gradient(white, ##F5D440, #CC890F, #BD3A42, #591115); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, ##F5D440, #CC890F, #BD3A42, #591115); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, ##F5D440, #CC890F, #BD3A42, #591115); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, ##F5D440, #CC890F, #BD3A42, #591115); /* Standard syntax */
 }
-.green-top-gradient {
-  background: cornsilk; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(SeaGreen, GreenYellow, khaki, cornsilk); /* Standard syntax */
+.cool-top-gradient {
+  background: #6C9BC3; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#356321, #314B6E, #6C9BC3, #C5BED9, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#356321, #314B6E, #6C9BC3, #C5BED9, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#356321, #314B6E, #6C9BC3, #C5BED9, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#356321, #314B6E, #6C9BC3, #C5BED9, white); /* Standard syntax */
 }
-.green-bottom-gradient {
-  background: cornsilk; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(cornsilk, khaki, GreenYellow, SeaGreen); /* Standard syntax */
+.cool-bottom-gradient {
+  background: #6C9BC3; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, #C5BED9, #6C9BC3, #314B6E, #356321); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, #C5BED9, #6C9BC3, #314B6E, #356321); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, #C5BED9, #6C9BC3, #314B6E, #356321); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #C5BED9, #6C9BC3, #314B6E, #356321); /* Standard syntax */
 }
