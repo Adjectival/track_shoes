@@ -1,22 +1,6 @@
-<div class="row well">
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <h3>Edit This Store</h3>
-    <form action="/stores/<%= @store.id() %>" method="post">
-      <input type="hidden" name="_method" value="patch">
-      <input name="store_name" type="text">
-      <button type="submit" class="btn btn-lg btn-warning">Edit</button>
-    </form>
-  </div>
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <h3>Delete This Store</h3>
-    <form action="/stores/<%= @store.id() %>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="btn btn-lg btn-danger">Delete</button>
-    </form>
-  </div>
-</div>
-<div class="row">
-  <h1>Shoe brands in <%= @store.name %></h1>
+<div class="warm-top-gradient">
+  <h1><%= @store.name %></h1>
+  <h2>stocks these Shoes</h2>
   <hr>
   <% if @store.shoes.any?() %>
     <ul>
@@ -28,22 +12,35 @@
     <h4>No Shoe brands in this store</h4>
   <% end %>
 </div>
-<div class="row well">
-  <h3>Available Shoe brands</h3>
+<div>
+  <h2>Available brands</h2>
   <% if @shoes.any?() %>
     <form action="/stores/<%= @store.id() %>/add_shoes" method="post">
       <input type="hidden" name="_method" value="patch">
       <% @shoes.each() do |shoe| %>
         <div class="checkbox">
-        <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><h4><%= shoe.brand() %></h4>
+        <h4><input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><%= shoe.brand() %></h4>
         </div>
       <% end %>
-        <button type="submit" class="btn btn-lg btn-success">Add Shoes</button>
+        <button type="submit" class="">Add Shoes</button>
     </form>
   <% else %>
     <h4>No Shoe brands, <a href="/">please add some</a></h4>
   <% end %>
 </div>
+<div class="warm-bottom-gradient">
+    <h3>Change this Store's Name?</h3>
+    <form action="/stores/<%= @store.id() %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input name="store_name" type="text">
+      <button type="submit" class="">Edit</button>
+    </form>
+    <h3>Delete This Store??</h3>
+    <form action="/stores/<%= @store.id() %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="">Delete</button>
+    </form>
+</div>
 <div>
-  <a class="btn btn-lg btn-info" href="/">Back to Main</a>
+  <a href="/"><button>Back to Main</button></a>
 </div>

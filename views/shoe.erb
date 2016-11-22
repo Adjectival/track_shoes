@@ -1,21 +1,21 @@
-<h1><%= @shoe.brand %> brand Shoes</h1>
-<div class="row">
-  <div class="well">
-    <h3>Edit This Shoe Brand</h3>
+<h1><%= @shoe.brand %></h1>
+<div class="cool-top-gradient">
+  <!-- <div class="well"> -->
+    <h3>Edit this Brand name?</h3>
     <form action="/shoes/<%= @shoe.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">
       <input name="shoe_brand" type="text">
-      <button type="submit" class="btn btn-lg btn-warning">Edit</button>
+      <button type="submit" class="">Edit</button>
     </form>
-    <h3>Delete This Shoe Brand</h3>
+    <h3>Delete this Shoe Brand??</h3>
     <form action="/shoes/<%= @shoe.id() %>" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+      <button type="submit" class="">Delete</button>
     </form>
-  </div>
+  <!-- </div> -->
 </div>
-<div class="row">
-  <h1><%= @shoe.brand %> is sold in these stores</h1>
+<div class="cool-bottom-gradient">
+  <h2><%= @shoe.brand %> brand is sold in these stores</h2>
   <hr>
   <% if @shoe.stores.any?() %>
     <ul>
@@ -28,5 +28,5 @@
   <% end %>
 </div>
 <div>
-  <a class="btn btn-lg btn-info" href="/">Back to Main</a>
+  <a class="" href="/">Back to Main</a>
 </div>
