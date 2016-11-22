@@ -35,7 +35,15 @@ li {
 }
 /*specific page zones*/
 body div div {
-  background-color: red;
+  background-color: #975;
+  color: SeaGreen, green;
+  height: 25%;
+  width: 100%;
+  top: 0px;
+  z-index: 0;
+}
+body div {
+  background-color: #975;
   color: SeaGreen, green;
   height: 25%;
   width: 100%;

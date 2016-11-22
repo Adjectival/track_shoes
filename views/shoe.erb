@@ -1,16 +1,16 @@
 <h1><%= @shoe.brand %> brand Shoes</h1>
-<div class="top-gradient">
+<div class="bottom-gradient">
   <!-- <div class="well"> -->
     <h3>Edit This Shoe Brand</h3>
     <form action="/shoes/<%= @shoe.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">
       <input name="shoe_brand" type="text">
-      <button type="submit" class="btn btn-lg btn-warning">Edit</button>
+      <button type="submit" class="">Edit</button>
     </form>
     <h3>Delete This Shoe Brand</h3>
     <form action="/shoes/<%= @shoe.id() %>" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+      <button type="submit" class="">Delete</button>
     </form>
   <!-- </div> -->
 </div>
@@ -28,5 +28,5 @@
   <% end %>
 </div>
 <div>
-  <a class="btn btn-lg btn-info" href="/">Back to Main</a>
+  <a class="" href="/">Back to Main</a>
 </div>

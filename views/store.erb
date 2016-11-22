@@ -4,14 +4,14 @@
     <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="patch">
       <input name="store_name" type="text">
-      <button type="submit" class="btn btn-lg btn-warning">Edit</button>
+      <button type="submit" class="">Edit</button>
     </form>
   <!-- </div> -->
   <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
     <h3>Delete This Store</h3>
     <form action="/stores/<%= @store.id() %>" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+      <button type="submit" class="">Delete</button>
     </form>
   <!-- </div> -->
 </div>
@@ -28,7 +28,7 @@
     <h4>No Shoe brands in this store</h4>
   <% end %>
 </div>
-<div class="bottom-gradient">
+<div class="top-gradient">
   <h3>Available Shoe brands</h3>
   <% if @shoes.any?() %>
     <form action="/stores/<%= @store.id() %>/add_shoes" method="post">
@@ -38,12 +38,12 @@
         <input type="checkbox" name="shoe_ids[]" value="<%= shoe.id()%>"><h4><%= shoe.brand() %></h4>
         </div>
       <% end %>
-        <button type="submit" class="btn btn-lg btn-success">Add Shoes</button>
+        <button type="submit" class="">Add Shoes</button>
     </form>
   <% else %>
     <h4>No Shoe brands, <a href="/">please add some</a></h4>
   <% end %>
 </div>
 <div>
-  <a class="btn btn-lg btn-info" href="/">Back to Main</a>
+  <a class="" href="/">Back to Main</a>
 </div>
