@@ -1,25 +1,27 @@
-<div class="center-within-me">
-  <h1>Track Shoes <i class="em em-boot"></i> ~ <i class="em em-shoe"></i> ~ <i class="em em-sandal"></i></h1>
-    <img class="rubbersole-image center-chunk-me-plz" src="img/shoes_enough.png" alt="distribution center #1 front image" width="70%" height="70%">
+<div class="center-me">
+    <h1><i class="em em-boot"></i>Track <i class="em em-shoe"></i> Shoes <i class="em em-sandal"></i></h1>
 </div>
 
-<div class="">
-    <h2 class="text-success">Stores</h2>
-      <hr>
-      <% if @stores.any?() %>
-        <ul class="warm-top-gradient">
-          <% @stores.each() do |store| %>
-            <li><a href="stores/<%= store.id() %>"><%= store.name() %></a></li>
-          <% end %>
-        </ul>
-      <% else %>
-        <h4>No Stores!</h4>
-      <% end %>
-      <form action="/stores" method="post">
-        <input name="new_store" type="text" value="Sole Harvest" class="form-control">
-        <button type="submit">Add New Store</button>
-      </form>
+<div>
+    <img class="rubbersole-image center-me" src="img/shoes_enough.png" alt="distribution center #1 front image" width="70%" height="70%">
+  <div>
+  <h2 class="text-success">Stores</h2>
+    <hr>
+    <% if @stores.any?() %>
+      <ul class="warm-top-gradient">
+        <% @stores.each() do |store| %>
+          <li><a href="stores/<%= store.id() %>"><%= store.name() %></a></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <h4>No Stores! Postgres doesn't persist, so please build a small database!</h4>
+    <% end %>
+    <form action="/stores" method="post">
+      <input name="new_store" type="text" value="Sole Harvest" class="form-control">
+      <button type="submit">Add New Store</button>
+    </form>
   </div>
+  <div>
     <h2 class="text-primary">Shoes</h2>
       <hr>
       <% if @shoes.any?() %>
@@ -29,10 +31,11 @@
           <% end %>
         </ul>
       <% else %>
-      <h4>No Shoe brands!</h4>
+      <h4>Add some Shoe brands! Watch the color grandient expand...</h4>
     <% end %>
     <form action="/shoes" method="post">
       <input name="new_shoe" type="text" value="Jams" class="form-control">
       <button type="submit">Add New Shoe</button>
     </form>
+  </div>
 </div>
