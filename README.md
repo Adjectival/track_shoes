@@ -9,17 +9,20 @@ Track Shoes is a web app that can manage inventories of products (shoes) in dist
 ![screenshot](track_shoes_2017.png)
 
 ## Setup
-- Clone/download this project directory
-- Open terminal in project directory
+- Clone/download this project directory.
+- Go to project directory. Enter this in terminal/CLI to launch your SQL server:
 ```
 $ postgres
+```
+- Open another terminal, and set up your database and spin up your app with these commands.
+```
 $ bundle
 $ rake db:create
 $ rake db:schema:load
 $ ruby app.rb
 ```
 
-- Open browser and visit: [**_localhost:4567_**](http://localhost:4567/)
+- Now visit: [**_localhost:4567_**](http://localhost:4567/)
 
 ## User Stories
 - As a user, I want to be able to **add, update, delete and list shoe stores**.
@@ -32,7 +35,7 @@ $ ruby app.rb
 
 ## Technologies Used
 - Application: Ruby, Sinatra
-- Testing: Rspec, Capybara
+- Testing: RSpec, Capybara
 - Database: PostgreSQL, Active Record
 - Design: CSS3
 
