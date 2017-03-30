@@ -49,7 +49,7 @@ Check out some of these resources to understand the technologies:_
 ### Legal
 ISC License
 
-Copyright (c) [2016], [Alexander Jacks]
+Copyright (c) [2016-2017], [Alexander Jacks]
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 

@@ -70,16 +70,7 @@ li, h3 {
   font-family: 'Menlo', sans-serif;
   font-size: 1.7rem;
 }
-/*centering classes*/
-.center-me {
-  margin: auto;
-  width: 50%;
-}
-.center-me-2 {
-  display: block;
-  margin: auto;
-  width: 40%;
-}
+
 /*specific page zones*/
 body div div {
   background-color: #B9A8B1;

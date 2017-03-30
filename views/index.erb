@@ -1,12 +1,11 @@
-<div class="center-me">
+<div class="d-flex justify-content-center">
     <h1><i class="em em-boot"></i>Track <i class="em em-shoe"></i> Shoes <i class="em em-sandal"></i></h1>
 </div>
 
 <div>
     <img class="rubbersole-image center-me" src="img/shoes_enough.png" alt="distribution center #1 front image" width="70%" height="70%">
   <div>
-  <h2 class="text-success">Stores</h2>
-    <hr>
+  <h2 class="display-4">Stores</h2>
     <% if @stores.any?() %>
       <ul class="warm-top-gradient">
         <% @stores.each() do |store| %>
@@ -14,16 +13,15 @@
         <% end %>
       </ul>
     <% else %>
-      <h4>No Stores! Postgres doesn't persist, so please build a small database!</h4>
+      <h4>No Stores! Please add a store to the database.</h4>
     <% end %>
     <form action="/stores" method="post">
       <input name="new_store" type="text" value="Sole Harvest" class="form-control">
-      <button type="submit">Add New Store</button>
+      <button type="submit" class="btn btn-lg btn-block btn-warning d-inline-block"><h3><i class="fa fa-2x fa-truck" aria-hidden="true"></i> Add New Store</h3></button>
     </form>
   </div>
   <div>
-    <h2 class="text-primary">Shoes</h2>
-      <hr>
+    <h2 class="display-4">Shoes</h2>
       <% if @shoes.any?() %>
         <ul class="cool-bottom-gradient">
           <% @shoes.each() do |shoe| %>
@@ -35,7 +33,7 @@
     <% end %>
     <form action="/shoes" method="post">
       <input name="new_shoe" type="text" value="Jams" class="form-control">
-      <button type="submit">Add New Shoe</button>
+      <button type="submit" class="btn btn-lg btn-block btn-success d-inline-block"><h3><i class="fa fa-2x fa-barcode" aria-hidden="true"></i> Add New Shoe</h3></button>
     </form>
   </div>
 </div>
